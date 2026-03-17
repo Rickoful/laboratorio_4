@@ -1,43 +1,28 @@
 import java.util.Scanner;
 
 public class Primo {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.print("Introduce un numero: ");
+        int numero = teclado.nextInt();
+        
+        int divisores = 0;
 
-    // Método para verificar si un número es primo
-    public static boolean esPrimo(int n) {
-        if (n <= 1) {
-            return false;
-        }
-
-        if (n == 2) {
-            return true;
-        }
-
-        if (n % 2 == 0) {
-            return false;
-        }
-
-        // Solo verificar hasta la raíz cuadrada
-        for (int i = 3; i * i <= n; i += 2) {
-            if (n % i == 0) {
-                return false;
+        // Contamos cuantos divisores tiene el numero
+        for (int i = 1; i <= numero; i++) {
+            if (numero % i == 0) {
+                divisores++; // Si el resto es 0, encontramos un divisor
             }
         }
 
-        return true;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Ingrese un número: ");
-        int num = sc.nextInt();
-
-        if (esPrimo(num)) {
-            System.out.println(num + " es un número primo");
+        // Un numero es primo si SOLO tiene 2 divisores (el 1 y al mismo)
+        if (divisores == 2) {
+            System.out.println(numero + " es primo.");
         } else {
-            System.out.println(num + " NO es un número primo");
+            System.out.println(numero + " no es primo.");
         }
-
-        sc.close();
+        
+        teclado.close();
     }
 }
