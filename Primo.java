@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Primo {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        
+
         System.out.print("Introduce un numero: ");
         int numero = teclado.nextInt();
-        
+
         int divisores = 0;
 
         // Contamos cuantos divisores tiene el numero
@@ -22,7 +22,7 @@ public class Primo {
         } else {
             System.out.println(numero + " no es primo.");
         }
-        
+
         teclado.close();
     }
 }
